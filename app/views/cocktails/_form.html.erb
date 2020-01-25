@@ -1,0 +1,13 @@
+<%= form_for(cocktail) do |f| %>
+  <% if @cocktail.errors.any? %>
+    <div class="errors-container">
+      <ul>
+        <% @dose.errors.full_message.each do |message| %>
+        <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%= f.label :name %>
+  <%= f.submit "Add a dose"%>
+<% end %>
