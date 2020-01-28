@@ -17,8 +17,10 @@ gem 'uglifier', '>= 1.3.0'
 gem 'webpacker'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'mini_racer', platforms: :ruby
-# Image storage
+# Hide stuff
 gem 'dotenv-rails', groups: [:development, :test]
+# Store image assets
+gem 'cloudinary', '~> 1.12.0'
 
 # Use frontend gems
 gem 'autoprefixer-rails'

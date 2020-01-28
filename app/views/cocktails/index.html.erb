@@ -3,7 +3,7 @@
   <div class="row">
     <% @cocktails.each do |cocktail| %>
       <div class="col-sm-6 card" style="width: 18rem">
-        <img src="https://images.unsplash.com/photo-1514362453360-8f94243c9996?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1301&q=80" class="card-img-top" alt="...">
+        <%= cl_image_tag("yzrurnsglbsukatqtj5g", width: 400, height: 300, crop: :fill) %>
           <div class="card-body">
             <h5 class="card-title"><%= cocktail.name %></h5>
             <% cocktail.doses.each do |dose| %>
