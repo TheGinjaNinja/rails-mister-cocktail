@@ -1,4 +1,4 @@
-<%= form_for(cocktail) do |f| %>
+<%= simple_form_for @cocktail do |f| %>
   <% if @cocktail.errors.any? %>
     <div class="errors-container">
       <ul>
@@ -9,5 +9,6 @@
     </div>
   <% end %>
   <%= f.label :name %>
-  <%= f.submit "Add a dose"%>
+  <%= f.text_field :name %>
+  <%= f.submit "Add a cocktail"%>
 <% end %>
