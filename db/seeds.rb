@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require "open-uri"
 
 puts "Deleting cocktails"
 Cocktail.destroy_all
@@ -319,4 +320,7 @@ Ingredient.create(ingredients)
 
 puts "Creating one cocktail"
 
-Cocktail.create(name:"Gin Garden")
+file = URI.open('https://www.pamperedchef.ca/iceberg/com/recipe/1445579-lg.jpg')
+cocktail = Cocktail.create(name:"Gin Garden")
+cocktail.photo.attach(io: file, filename: 'gin_garden.jpg', content_type: 'image/png')
+

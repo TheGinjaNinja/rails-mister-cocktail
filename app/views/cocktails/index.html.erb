@@ -5,8 +5,8 @@
     <div class="row mb-3">
       <% @cocktails.each do |cocktail| %>
         <div class="col-4 mb-3">
-          <div class="card">
-            <img class="card-img" src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2249&q=80" alt="Card image">
+          <div class="card" style="background-image: url('<%= cl_image_path @cocktail.photo.key, height: 300, width: 400, crop: :fill %>')">
+            <!-- <img class="card-img" src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2249&q=80" alt="Card image"> -->
             <div class="card-img-overlay">
               <h5 class="card-title text-white"><%= link_to cocktail.name, cocktail_path(cocktail) %></h5>
             </div>
