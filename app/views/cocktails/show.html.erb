@@ -1,28 +1,22 @@
-<h1><%= @cocktail.name %></h1>
-<br>
-<h3>Ingredients: </h3>
-<% @cocktail.ingredients.each do |ingredient| %>
-<ul>
-  <li>
-    <%= ingredient.name %>
-  </li>
-</ul>
-<% end %>
-<br>
-<h3>Doses:</h3>
-<% @cocktail.doses.each do |dose| %>
-<ul>
-  <li>
-    <%= dose.description %>
-  </li>
-</ul>
-<% end %>
-
-<br>
-
-<%= link_to "Back to cocktails", cocktails_path %>
-
-<br>
-
-<%= link_to "Add ingredients", new_cocktail_dose_path(@cocktail) %>
-
+<div class="card bg-dark text-white">
+  <img class="card-img" src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2249&q=80" alt="Card image">
+  <div class="card-img-overlay">
+    <h5 class="card-title"><%= @cocktail.name %></h5>
+    <p class="card-text">
+      <p>
+      Ingredients:
+      <% @cocktail.ingredients.each do |ingredient| %>
+        <%= ingredient.name %>
+      <% end %>
+      </p>
+      <p>
+      Doses:
+      <% @cocktail.doses.each do |dose| %>
+        <%= dose.description %>
+      <% end %>
+      </p>
+    </p>
+    <%= link_to "Add ingredients", new_cocktail_dose_path(@cocktail), :class => "btn btn-primary" %>
+    <%= link_to "Home", cocktails_path, :class => "btn btn-primary" %>
+  </div>
+</div>
